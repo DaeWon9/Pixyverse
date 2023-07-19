@@ -73,7 +73,7 @@ const Home = ({navigation}) => {
         <Button
           title="Go to SignUp"
           color="white"
-          onPress={() => navigation.navigate('Login')}
+          onPress={() => navigation.navigate('SignUp')}
         />
       </View>
 
