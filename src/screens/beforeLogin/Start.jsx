@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Home = ({navigation}) => {
+const Start = ({navigation}) => {
   return (
     <SafeAreaView>
       {/* <ImageBackground
@@ -82,4 +82,4 @@ const Home = ({navigation}) => {
   );
 };
 
-export default Home;
+export default Start;

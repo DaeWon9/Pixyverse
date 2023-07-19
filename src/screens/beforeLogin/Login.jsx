@@ -41,12 +41,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const Login = () => {
+const Login = ({navigation}) => {
   let [email, setEmail] = useState('');
   let [password, setPassword] = useState('');
 
   onClickLoginButton = () => {
     alert('이메일 : ' + email + '\n비밀번호 : ' + password);
+    navigation.reset({routes: [{name: 'Home'}]});
   };
 
   return (
