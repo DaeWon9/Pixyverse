@@ -3,12 +3,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import GroupCarousel from '../../components/GroupCarousel';
 
 const Home = () => {
   const Tab = createBottomTabNavigator();
 
   function HomeScreen() {
-    return <Text>Home</Text>;
+    return <GroupCarousel />;
   }
 
   function SearchScreen() {
