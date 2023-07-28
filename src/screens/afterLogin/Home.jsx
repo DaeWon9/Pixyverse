@@ -4,12 +4,17 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import GroupCarousel from '../../components/GroupCarousel';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 const Home = () => {
   const Tab = createBottomTabNavigator();
 
   function HomeScreen() {
-    return <GroupCarousel />;
+    return (
+      <GestureHandlerRootView style={{flex: 1}}>
+        <GroupCarousel />
+      </GestureHandlerRootView>
+    );
   }
 
   function SearchScreen() {

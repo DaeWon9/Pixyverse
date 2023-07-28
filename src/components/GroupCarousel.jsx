@@ -1,28 +1,39 @@
 import * as React from 'react';
-import {Dimensions, Text, View} from 'react-native';
+import {View} from 'react-native';
+import GroupCard from './GroupCard';
 import Carousel from 'react-native-reanimated-carousel';
+import {window} from '../constants';
+
+const colors = ['#fda282', '#fdba4e', '#800015'];
+const PAGE_WIDTH = window.width;
+const PAGE_HEIGHT = window.width * 1.2;
 
 function GroupCarousel() {
-  const width = Dimensions.get('window').width;
+  const baseOptions = {
+    vertical: false,
+    width: PAGE_WIDTH,
+    height: PAGE_HEIGHT,
+  };
+
   return (
     <View style={{flex: 1}}>
       <Carousel
+        {...baseOptions}
         loop
-        width={width}
-        height={width / 2}
         autoPlay={false}
-        data={[...new Array(6).keys()]}
-        scrollAnimationDuration={1000}
-        onSnapToItem={index => console.log('current index:', index)}
-        renderItem={({index}) => (
-          <View
-            style={{
-              flex: 1,
-              borderWidth: 1,
-              justifyContent: 'center',
-            }}>
-            <Text style={{textAlign: 'center', fontSize: 30}}>{index}</Text>
-          </View>
+        withAnimation={{
+          type: 'spring',
+          config: {
+            damping: 13,
+          },
+        }}
+        data={colors}
+        renderItem={({index, animationValue}) => (
+          <GroupCard
+            animationValue={animationValue}
+            key={index}
+            index={index}
+          />
         )}
       />
     </View>
