@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Home = ({navigation}) => {
+const Start = ({navigation}) => {
   return (
     <SafeAreaView>
       {/* <ImageBackground
@@ -73,7 +73,7 @@ const Home = ({navigation}) => {
         <Button
           title="Go to SignUp"
           color="white"
-          onPress={() => navigation.navigate('Login')}
+          onPress={() => navigation.navigate('SignUp')}
         />
       </View>
 
@@ -82,4 +82,4 @@ const Home = ({navigation}) => {
   );
 };
 
-export default Home;
+export default Start;
